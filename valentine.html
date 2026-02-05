@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will you be my Valentine? 💌</title>
+<style>
+  body { text-align: center; font-family: sans-serif; margin-top: 50px; }
+  button { font-size: 20px; padding: 10px 20px; margin: 20px; cursor: pointer; transition: all 0.3s ease; }
+  #yes { background-color: pink; }
+  #no { background-color: lightgray; }
+</style>
+</head>
+<body>
+
+<h1>Will you be my Valentine? 💌</h1>
+
+<button id="yes">YES 💘</button>
+<button id="no">NO 💔</button>
+
+<script>
+let noClicks = 0;
+
+const yesButton = document.getElementById('yes');
+const noButton = document.getElementById('no');
+
+noButton.addEventListener('click', () => {
+  noClicks++;
+
+  if (noClicks === 1) {
+    noButton.textContent = "Are you sure? 🤔";
+  } else if (noClicks === 2) {
+    alert("Please think carefully! 😌");
+  } else if (noClicks === 3) {
+    yesButton.style.transform = "scale(1.5)";
+  } else if (noClicks === 4) {
+    alert("You have no choice but to click YES! ❤️");
+  }
+});
+
+yesButton.addEventListener('click', () => {
+  alert("YAY! You made me the happiest person alive! 💖");
+});
+</script>
+
+</body>
+</html>
